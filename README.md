@@ -2,7 +2,7 @@
 
 # 🧰 KoolKits 🧰
 
-Opinionated, batteries-included, debugging-oriented images for Kubernetes.
+Opinionated, language-specific, batteries-included debug container images for Kubernetes.
 
 Available for:
 
