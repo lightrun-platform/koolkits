@@ -2,7 +2,7 @@
 
 <img src="./node-logo.png" style="max-width:20%;" />
 
-KoolKits (**K**ubernetes t**oolkits**) are language-specific container images, that contain a (highly-opjnionated) set of tools for debugging applications running in Kubernetes pods. You can read more about KoolKits [here](../README.md) or learn about the motivation behind this project [here](#Motivation).
+KoolKits (**K**ubernetes t**oolkits**) are language-specific container images, that contain a (highly-opinionated) set of tools for debugging applications running in Kubernetes pods. You can read more about KoolKits [here](../README.md) or learn about the motivation behind this project [here](#Motivation).
 
 Using the Node.js KoolKit you can spin up `0x` for fancy flamegraphs or `ndb` for debugging your app your Kubernetes pods without any configuration or extra setup.
 

@@ -2,7 +2,7 @@
 
 <img src="./java-logo.png" style="max-width:20%;" />
 
-KoolKits (**K**ubernetes t**oolkits**) are language-specific container images, that contain a (highly-opjnionated) set of tools for debugging applications running in Kubernetes pods. You can read more about KoolKits [here](../README.md) or learn about the motivation behind this project [here](#Motivation).
+KoolKits (**K**ubernetes t**oolkits**) are language-specific container images, that contain a (highly-opinionated) set of tools for debugging applications running in Kubernetes pods. You can read more about KoolKits [here](../README.md) or learn about the motivation behind this project [here](#Motivation).
 
 Using the JVM KoolKit you can use `async-profiler`,`jmxterm` or VisualVM with any JVM running inside your Kubernetes pods, without any extra configuration or setup.
 
