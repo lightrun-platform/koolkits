@@ -8,7 +8,11 @@ Available for:
 
 [![NodeJS](https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white)](https://github.com/lightrun-platform/koolkits/tree/main/nodejs) [![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)](https://github.com/lightrun-platform/koolkits/tree/main/python) [![Java](https://img.shields.io/badge/java-%23ED8B00.svg?style=for-the-badge&logo=java&logoColor=white)](https://github.com/lightrun-platform/koolkits/tree/main/jvm)
 
-[_What now?_](#-what-is-a-koolkit-)
+KoolKits (**K**ubernetes t**oolkits**) are language-specific container images that contain a (highly-opinionated) set of tools for debugging applications running in Kubernetes pods. You can read more about the motivation behind this project [here](#Motivation).
+
+Those images are intended for use with the new `kubectl debug` feature, that spins up [Ephemeral containers](https://kubernetes.io/docs/concepts/workloads/pods/ephemeral-containers/) for interactive troubleshooting. A KoolKit will be pulled by `kubectl debug`, spun up as a container in your pod, and have the ability to access the same process namespace as your original container. 
+
+Since production containers are usually **[rather bare](https://cloud.google.com/architecture/best-practices-for-building-containers#remove_unnecessary_tools)**, using a KoolKit enables you **troubleshoot with power tools** instead of relying on what was left behind due to the generosity (or carelessness) of whoever originally built the production image.
 ## 🏁 Quickstart 🏁
 
 Run a Node.js KoolKit in your production cluster (Kubernetes v1.23 and above):
@@ -55,15 +59,7 @@ Where the full syntax is:
 ```shell
 kk <POD-NAME> <LANGUAGE> <DEPLOYMENT-NAME>
 ```
-
-## ❓ What is a KoolKit? ❓
-
-KoolKits (**K**ubernetes t**oolkits**) are language-specific container images that contain a (highly-opinionated) set of tools for debugging applications running in Kubernetes pods. You can read more about the motivation behind this project [here](#Motivation).
-
-Those images are intended for use with the new `kubectl debug` feature, that spins up [Ephemeral containers](https://kubernetes.io/docs/concepts/workloads/pods/ephemeral-containers/) for interactive troubleshooting. A KoolKit will be pulled by `kubectl debug`, spun up as a container in your pod, and have the ability to access the same process namespace as your original container. 
-
-Since production containers are usually **[rather bare](https://cloud.google.com/architecture/best-practices-for-building-containers#remove_unnecessary_tools)**, using a KoolKit enables you **troubleshoot with power tools** instead of relying on what was left behind due to the generosity (or carelessness) of whoever originally built the production image. 
-
+ 
 ## 👇 Available KoolKits 👇
 
 Each of the folders in this repo contains the Dockerfile - and a short explanation of - the debug image. All KoolKits are based on the [`ubuntu:20.04`](https://hub.docker.com/layers/ubuntu/library/ubuntu/20.04/images/sha256-57df66b9fc9ce2947e434b4aa02dbe16f6685e20db0c170917d4a1962a5fe6a9?context=explore) base image, since real people need real shells. 
