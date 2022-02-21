@@ -63,6 +63,8 @@ RUN curl -s https://get.sdkman.io | bash && \
     sdk default visualvm $VISUALVM_VERSION && \
     sdk install maven $MAVEN_VERSION && \
     sdk default maven $MAVEN_VERSION" && \
+    sdk install gradle && \
+    sdk install ant && \
     # Get honest-profiler
     curl -L http://insightfullogic.com/honest-profiler.zip -o honest-profiler.zip && \
     unzip honest-profiler.zip && \
