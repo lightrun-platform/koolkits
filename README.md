@@ -12,7 +12,8 @@ KoolKits (**K**ubernetes t**oolkits**) are language-specific container images th
 
 Those images are intended for use with the new `kubectl debug` feature, which spins up [Ephemeral containers](https://kubernetes.io/docs/concepts/workloads/pods/ephemeral-containers/) for interactive troubleshooting. A KoolKit will be pulled by `kubectl debug`, spun up as a container in your pod, and have the ability to access the same process namespace as your original container. 
 
-Since production containers are usually **[rather bare](https://cloud.google.com/architecture/best-practices-for-building-containers#remove_unnecessary_tools)**, using a KoolKit enables you **troubleshoot with power tools** instead of relying on what was left behind due to the generosity (or carelessness) of whoever originally built the production image.
+Since production containers are usually **[rather bare](https://cloud.google.com/architecture/best-practices-for-building-containers#remove_unnecessary_tools)**, using a KoolKit enables you to **troubleshoot with power tools** instead of relying on what was left behind due to the generosity (or carelessness) of whoever originally built the production image.
+
 ## 🏁 Quickstart 🏁
 
 Run a Node.js KoolKit in your production cluster (Kubernetes v1.23 and above):
