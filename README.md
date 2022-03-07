@@ -72,7 +72,7 @@ Each of the folders in this repo contains the Dockerfile - and a short explanati
 The list:
 
 1. [`koolkit-jvm`](jvm/README.md) - AdoptOpenJDK 17.0.2 & related tooling (including `jabba` for easy version management and Maven 3.8.4)
-1. [`koolkit-node`](node/README.MD) - Node 16.13.1 & related tooling (including `nvm` for easy version management)
+1. [`koolkit-node`](nodejs/README.md) - Node 16.13.1 & related tooling (including `nvm` for easy version management)
 1. [`koolkit-python`](python/README.md) - Python 3.10.2 & related tooling (including `pyenv` for easy version management)
 
 Note that you don't actually have to build them yourselves - all KoolKits are hosted publicly on [Docker Hub](https://hub.docker.com/repository/docker/lightruncom/koolkits) and available free of charge. 
