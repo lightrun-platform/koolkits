@@ -81,7 +81,7 @@ Note that you don't actually have to build them yourselves - all KoolKits are ho
 
 ## 🚧 Coming up / WIP 🚧
 
-- [ ] A whole new, Go 1.17.7 KoolKit
+- [x] A whole new, Go 1.17.7 KoolKit _(released on March 2022)_
 - [ ] JVM KoolKit - [`jvm-profiler`](https://github.com/uber-common/jvm-profiler), [`jHiccup`](https://github.com/giltene/jHiccup) support
 - [ ] Node.js KoolKit - [`llnode`](https://github.com/nodejs/llnode), [`thetool`](https://github.com/sfninja/thetool) support
 - [ ] Python KoolKit - [`vardbg`](https://github.com/CCExtractor/vardbg), [`memprof`](https://github.com/jmdana/memprof) support
