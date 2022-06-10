@@ -79,11 +79,16 @@ RUN curl -s https://get.sdkman.io | bash && \
     unzip jmxtrans.zip && \
     rm jmxtrans.zip && \
     echo "alias jmxtrans='/usr/local/bin/jmxtrans-jmxtrans-parent-272/jmxtrans/jmxtrans.sh'" >> /root/.bashrc && \
-    # Get async-profiler
+    # Get async-profiler-arm64
     curl -L https://github.com/jvm-profiling-tools/async-profiler/releases/download/v2.6/async-profiler-2.6-linux-arm64.tar.gz -o async-profiler.tar.gz && \
     tar -xzvf async-profiler.tar.gz && \
     rm async-profiler.tar.gz && \
-    echo "alias async-profiler='/usr/local/bin/async-profiler-2.6-linux-arm64/profiler.sh'" >> /root/.bashrc && \
+    echo "alias async-profiler-arm64='/usr/local/bin/async-profiler-2.6-linux-arm64/profiler.sh'" >> /root/.bashrc && \
+    # Get async-profiler-x64
+    curl -L https://github.com/jvm-profiling-tools/async-profiler/releases/download/v2.6/async-profiler-2.6-linux-x64.tar.gz -o async-profiler.tar.gz && \
+    tar -xzvf async-profiler.tar.gz && \
+    rm async-profiler.tar.gz && \
+    echo "alias async-profiler-x64='/usr/local/bin/async-profiler-2.6-linux-x64/profiler.sh'" >> /root/.bashrc && \
     # Get calicoctl (inside the pod)
     curl -L https://github.com/projectcalico/calico/releases/latest/download/calicoctl-linux-amd64 -o calicoctl && \
     chmod +x calicoctl && \
