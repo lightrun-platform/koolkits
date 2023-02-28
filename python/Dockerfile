@@ -1,5 +1,5 @@
 FROM ubuntu:20.04
-ENV PYTHON_VERSION=3.10.2
+ENV PYTHON_VERSION=3.9.16
 ENV DEBIAN_FRONTEND=noninteractive
 
 RUN apt-get update && \

@@ -1,5 +1,5 @@
 FROM ubuntu:20.04
-ENV GO_VERSION=go1.17.6
+ENV GO_VERSION=go1.19.6
 ENV DEBIAN_FRONTEND=noninteractive
 SHELL ["/bin/bash", "-c"]
 
@@ -80,23 +80,23 @@ RUN curl -L https://github.com/brendangregg/FlameGraph/archive/refs/heads/master
     cd redis-stable && \
     make && \ 
     echo "alias redis-cli='/usr/local/bin/redis-stable/src/redis-cli'" >> /root/.bashrc 
-    # Get alp
-    RUN curl -L https://github.com/tkuchiki/alp/releases/download/v1.0.8/alp_linux_amd64.zip -o alp.zip && \
+# Get alp
+RUN curl -L https://github.com/tkuchiki/alp/releases/download/v1.0.8/alp_linux_amd64.zip -o alp.zip && \
     unzip alp.zip && \
     rm alp.zip 
-    #Get gvm and install golang
-    RUN bash < <(curl -s -S -L https://raw.githubusercontent.com/moovweb/gvm/master/binscripts/gvm-installer) && \
+#Get gvm and install golang
+RUN bash < <(curl -s -S -L https://raw.githubusercontent.com/moovweb/gvm/master/binscripts/gvm-installer) && \
     source /root/.gvm/scripts/gvm && \
     gvm install $GO_VERSION -B && \
     gvm use $GO_VERSION --default 
-    # Get pprof
-    RUN GOBIN=/usr/local/bin ~/.gvm/gos/go1.17.6/bin/go install github.com/google/pprof@latest &&\
+# Get pprof
+RUN GOBIN=/usr/local/bin ~/.gvm/gos/go1.19.6/bin/go install github.com/google/pprof@latest &&\
     # Get dlv
-    ~/.gvm/gos/go1.17.6/bin/go install github.com/go-delve/delve/cmd/dlv@latest && \
+    ~/.gvm/gos/go1.19.6/bin/go install github.com/go-delve/delve/cmd/dlv@latest && \
     # Get go-callvis
-    ~/.gvm/gos/go1.17.6/bin/go install github.com/ofabry/go-callvis@latest
-    # Get mongo shell (not available over apt)
-    RUN curl -L https://repo.mongodb.org/apt/ubuntu/dists/focal/mongodb-org/5.0/multiverse/binary-amd64/mongodb-org-shell_5.0.5_amd64.deb -o mongodb-org-shell_5.0.5_amd64.deb && \
+    ~/.gvm/gos/go1.19.6/bin/go install github.com/ofabry/go-callvis@latest
+# Get mongo shell (not available over apt)
+RUN curl -L https://repo.mongodb.org/apt/ubuntu/dists/focal/mongodb-org/5.0/multiverse/binary-amd64/mongodb-org-shell_5.0.5_amd64.deb -o mongodb-org-shell_5.0.5_amd64.deb && \
     dpkg -i mongodb-org-shell_5.0.5_amd64.deb && \
     rm mongodb-org-shell_5.0.5_amd64.deb && \
     #Get calicoctl (inside the pod)
