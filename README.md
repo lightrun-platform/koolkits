@@ -23,13 +23,13 @@ Since production containers are usually **[rather bare](https://cloud.google.com
 Run a Node.js KoolKit in your production cluster (Kubernetes v1.23 and above):
 
 ```shell
-kubectl debug -it <POD-NAME> --image=lightrun-platform/koolkits/koolkit-node --image-pull-policy=Never --target=<DEPLOYMENT-NAME>
+kubectl debug -it <POD-NAME> --image=lightruncom/koolkits:node --image-pull-policy=Never --target=<DEPLOYMENT-NAME>
 ```
 
 Run a JVM KoolKit in MiniKube (Kubernetes v1.23 and above): 
 
 ```shell
-minikube kubectl -- debug -it <POD-NAME> --image=lightrun-platform/koolkits/koolkit-jvm --image-pull-policy=Never --target=<DEPLOYMENT-NAME>
+minikube kubectl -- debug -it <POD-NAME> --image=lightruncom/koolkits:jvm --image-pull-policy=Never --target=<DEPLOYMENT-NAME>
 ```
 
 #### Adding to `.bashrc`/`.zshrc`
